@@ -9,6 +9,15 @@
     <script type="text/javascript">
         Bokeh.set_log_level("info");
     </script>
+
+    <!-- the following added by saber to change the download button style-->
+    <style>
+      .bk-btn {
+        flex-grow: 0 !important;
+        /* position: absolute;
+      top: 200%;  */
+      }
+    </style>
   </head>
   <body>
     <div class="bk-root" id="b886ac70-dd58-4171-8ac1-2df8c7054094" data-root-id="1308"></div>
@@ -49,6 +58,18 @@
         if (document.readyState != "loading") fn();
         else document.addEventListener("DOMContentLoaded", fn);
       })();
+    </script>
+    <!-- the following added by saber to change the download button style-->
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // Simulating the addition of the button dynamically
+        const button = document.createElement('button');
+        button.className = 'bk-btn';
+        button.textContent = 'Dynamic Button';
+
+        const targetDiv = document.querySelector('.bk.bk-toolbar.bk-right');
+        targetDiv.appendChild(button);
+      });
     </script>
   </body>
 </html>
